@@ -1,6 +1,7 @@
 import nltk
 from nltk.tokenize import word_tokenize
 from nltk import pos_tag
+from nltk.metrics import ConfusionMatrix
 
 #nltk.download()
 
@@ -519,19 +520,20 @@ BaseTeste =[
 ('eu fiquei enojado','desgosto'),
 ('daqui alguns meses vou embora deste pais que já estou nauseado','desgosto')
 ]
+
 stopwordsnltk = nltk.corpus.stopwords.words('portuguese')
 
-def removestopwords(teste):
+def removestopwords(texto):
     frases = []
-    for (palavras, emocao) in teste:
+    for (palavras, emocao) in texto:
         semstop = [p for p in palavras.split() if p not in stopwordsnltk]
         frases.append((semstop, emocao))
     return frases
 
-def aplicastemmer(teste):
+def aplicastemmer(texto):
     stemmer = nltk.stem.RSLPStemmer()
     frasesstemming = []
-    for(palavras, emocao) in teste:
+    for(palavras, emocao) in texto:
         comstemming = [str(stemmer.stem(p)) for p in palavras.split() if p not in stopwordsnltk]
         frasesstemming.append((comstemming, emocao))
     return frasesstemming
@@ -541,7 +543,7 @@ frasescomstemmerTeste = aplicastemmer(BaseTeste)
 
 def buscaPalavras(frases):
     todasPalavras = []
-    for(palavras, emocao ) in frases:
+    for(palavras, emocao) in frases:
         todasPalavras.extend(palavras)
     return todasPalavras
 
