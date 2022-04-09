@@ -1,0 +1,1 @@
+teste = 'eu amo voçê'
