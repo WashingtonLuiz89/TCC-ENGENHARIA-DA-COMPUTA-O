@@ -1,1 +1,0 @@
-teste = 'não acredito que amanha vai fazer sol'
