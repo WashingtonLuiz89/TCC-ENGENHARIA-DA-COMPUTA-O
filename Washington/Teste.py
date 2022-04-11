@@ -1,1 +1,1 @@
-teste = 'eu amo voçê'
+teste = 'não acredito que amanha vai fazer sol'

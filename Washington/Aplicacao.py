@@ -2,13 +2,11 @@ import nltk
 from nltk.tokenize import word_tokenize
 from nltk import pos_tag
 from nltk.metrics import ConfusionMatrix
-from nltk.stem import RSLPStemmer
 from Base import BaseTreinamento
 from Base import BaseTeste
 from Teste import teste
 
 #nltk.download()
-
 
 stopwordsnltk = nltk.corpus.stopwords.words('portuguese')
 
@@ -86,7 +84,6 @@ for (frase, classe) in baseCompletaTeste:
     if resultado != classe:
         erros.append((classe, resultado, frase))
 
-from nltk.metrics import ConfusionMatrix
 esperado = []
 previsto = []
 for (frase, classe) in baseCompletaTeste:
@@ -94,13 +91,9 @@ for (frase, classe) in baseCompletaTeste:
     previsto.append(resultado)
     esperado.append(classe)
 
-#esperado = 'alegria alegria alegria alegria medo medo surpresa surpresa'.split()
-#previsto = 'alegria alegria medo surpresa medo medo medo surpresa'.split()
-
 matriz = ConfusionMatrix(esperado, previsto)
 print("\nResultado do Matriz do Teste Realizado:\n")
 print(matriz)
-
 
 testestemming = []
 stemmer = nltk.stem.RSLPStemmer()
@@ -113,7 +106,7 @@ print("\nResultado do Stemming do Teste Realizado:\n")
 print(novo)
 
 distribuicao = classificador.prob_classify(novo)
-print("\nResultado do clasificador Naive Bayes do Teste Realizado:\n")
+print("\nResultado do classificador Naive Bayes do Teste Realizado:\n")
 print(classificador.classify(novo))
 classnovo = classificador.classify(novo)
 
