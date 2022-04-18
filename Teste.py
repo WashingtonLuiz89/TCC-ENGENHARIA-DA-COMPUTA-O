@@ -1,1 +1,1 @@
-teste = 'não acredito que amanha vai fazer sol'
+teste = 'gostamos de trabalhar'
