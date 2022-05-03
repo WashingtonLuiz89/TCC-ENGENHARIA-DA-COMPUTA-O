@@ -1,3 +1,4 @@
+# Realizado a Implememtação da BaseTreinamento como fonte de dados para Aplicação.Py
 BaseTreinamento = [
 ('eu gosto disso', 'alegria'),
 ('este trabalho e agradável','alegria'),
@@ -261,6 +262,8 @@ BaseTreinamento = [
 ('estou derrotada e deprimida depois deste dia','tristeza'),
 ('e comovente te ver dessa maneira','tristeza'),
 ]
+
+# Realizado a Implememtação da BaseTeste como fonte de dados para aplicação.
 BaseTeste =[
 ('não precisei pagar o ingresso','alegria'),
 ('se eu ajeitar tudo fica bem','alegria'),
